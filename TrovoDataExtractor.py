@@ -1,13 +1,3 @@
-# Project: TrovoViewerCount
-# Author: V4n1X (C)2020
-# Version: 0.3
-# Last update: 14.07.2020
-# Extracting viewers from trovo.live
-# using web request (#<span data-v-3dfc5312>X viewers</span>)
-# Updates every sec
-# FAKE UserAgent: Win 10 x64 - MS Edge
-
-#Import everything
 from bs4 import BeautifulSoup
 import time
 import datetime
