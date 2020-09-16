@@ -7,4 +7,4 @@ Enter the following command:
 `pip install -r requirements.txt`
 
 ## How to use
-Double click on the **TrovoDataExtractor.py** file. Python 3 is required to .
+Double click on the **TrovoDataExtractor.py** file. Python 3 is required to run.
