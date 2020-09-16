@@ -55,12 +55,6 @@ def loopit():
     #time.sleep(10)
 
     while True:
-
-        '''Quit = input("\nPress 'q' to quit the program\n")
-        if Quit == "Q" or Quit == "q":
-            break
-        '''
-
         
         try:
             time.sleep(1)
@@ -85,10 +79,6 @@ def loopit():
             clear()
             print(str(viewers) + " viewers | " + str(followers) + " followers")
 
-        except KeyboardInterrupt:
-            print("fbb")
-            # If you actually want the program to exit
-            raise
         except selenium.common.exceptions.WebDriverException:
             print("\nChrome window closed. You must leave the window open for the program to work.")
             print("Thank you for using Trovo Data Extractor. See u soon.\n")
