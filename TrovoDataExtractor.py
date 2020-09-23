@@ -17,8 +17,9 @@ streamerURL = "alexropi"
 url = "https://trovo.live/" + streamerURL
 
 def greeting():
-    print("Trovo Data Extractor | Version 1.0 | GPL v3 License")
-    print("https://github.com/drorganvidez/trovodataextractor\n")
+    print("Trovo Data Extractor | Version 1.1 | GPL v3 License")
+    print("https://github.com/drorganvidez/trovodataextractor")
+    print("Extracting from "+url+"\n")
 
 def clear(): 
   
@@ -34,12 +35,6 @@ def write_in_file(file_name,value):
     file = open(file_name, "w")
     file.write(value)
     file.close()
-
-def extract_value(soup,tag):
-    span = soup.find("span", attrs={tag:True})
-    items = span.text
-    sep = ' '
-    return items.split(sep, 1)[0]
 
 #Start loop
 def loopit():
@@ -63,8 +58,8 @@ def loopit():
             soup = BeautifulSoup(html,"html.parser")
 
             # Viewers
-            p = soup.find("p",{"class","viewer"})
-            spans_p = cat_button = p.find_all("span")
+            ps = soup.find_all("p",{"class","viewer"})
+            spans_p = ps[-1].find_all("span")
             viewers = spans_p[0].text.split(' ', 1)[0]
 
             # Followers
