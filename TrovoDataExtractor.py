@@ -52,7 +52,6 @@ def loopit():
     print("\nOpening Google Chrome helper window, please wait...")
 
     driver.get(url)
-    #time.sleep(10)
 
     while True:
         
@@ -64,8 +63,9 @@ def loopit():
             soup = BeautifulSoup(html,"html.parser")
 
             # Viewers
-            viewers = extract_value(soup,"data-v-09df9218")
-            write_in_file("TrovoViewerCount.txt",viewers)
+            p = soup.find("p",{"class","viewer"})
+            spans_p = cat_button = p.find_all("span")
+            viewers = spans_p[0].text.split(' ', 1)[0]
 
             # Followers
             div = soup.find("div",{"class","feature-wrap"})
