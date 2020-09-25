@@ -17,7 +17,7 @@ streamerURL = "alexropi"
 url = "https://trovo.live/" + streamerURL
 
 def greeting():
-    print("Trovo Data Extractor | Version 1.1 | GPL v3 License")
+    print("Trovo Data Extractor | Version 1.1.1 | GPL v3 License")
     print("https://github.com/drorganvidez/trovodataextractor")
     print("Extracting from "+url+"\n")
 
@@ -61,6 +61,7 @@ def loopit():
             ps = soup.find_all("p",{"class","viewer"})
             spans_p = ps[-1].find_all("span")
             viewers = spans_p[0].text.split(' ', 1)[0]
+            write_in_file("TrovoViewerCount.txt",viewers)
 
             # Followers
             div = soup.find("div",{"class","feature-wrap"})
